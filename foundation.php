@@ -111,9 +111,11 @@ box-sizing: border-box;
 <div class="sticky-section">
 <div id="logo">What Do You Know About Wolves?</div>
   <nav>
-    <a href='home.html'>Home</a>
-    <a href="FRT.HTML">Wolf Donations Management</a>
+       <a href='home.html'>Home</a>
+    <a href="FRT.html">Wolf Donations Management</a>
     <a href="SA.html">Accreditation</a>
+    
+    
     
   </nav>
   
