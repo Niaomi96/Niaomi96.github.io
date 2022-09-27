@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="nav.css">
 <link rel="stylesheet" href="signature.css">
 <script src="home.js"></script>
+<script src="f.js"></script>
 <script defer src="add.js"></script>
   <h1><img src="vitalis.png" alt="vitalis" style="width:200px"style="height:200px" style="float:left"><span>Wolves Are </span>Just Like Us</h1>
     <h3>Give Them Love & Respect.</h3>
@@ -192,7 +193,7 @@ box-sizing: border-box;
 <button data-close-button class="close-button">&times;</button>
 </div>
 <div class="sign-body">
-<form action ="insert2.php" method="post">
+<form name="myForm" action ="insert2.php" onsubmit="return validateForm()" method="post">
 <fieldset>
 <p><label for="SignatureID">SignatureID:</label>
 <input type ="text" id="SignatureID" name="SignatureID" maxlength="25" size="25" /></p>

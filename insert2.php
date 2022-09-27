@@ -51,9 +51,9 @@ $sql_run = mysqli_query($conn, $sql);
 }
 
 if ($conn === TRUE) {
-  echo "New Foundation Representatives created successfully";
+   echo "Error: "."Please add a your name to signatures table first!". "<br>"."Please & Thank You"."<br>"."<br>"."If You already have signed, please make sure to have your identifcation Number"."<br>" ;
 } else {
-  echo "Error: "."Please add a your name to signatures table first!". "<br>"."Please & Thank You"."<br>"."<br>"."If You already have signed, please make sure to have your identifcation Number"."<br>" ;
+ echo "New Foundation Representatives created successfully";
 }
 
 $conn->close();

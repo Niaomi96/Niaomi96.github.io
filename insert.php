@@ -41,15 +41,16 @@ if(isset($_POST['insert'])){
         $Name=$_POST['Name'];
 		$Sponsor=$_POST['Sponsor'];
 		$Region=$_POST['Region'];
-		
+			
 
 $sql = "INSERT INTO signatures (Name, Sponsor, Region) VALUES ( '$Name', '$Sponsor', '$Region')";
 $sql_run = mysqli_query($conn, $sql);
 }
+
 if ($conn === TRUE) {
-  echo "New signature created successfully";
-} else {
-   echo "Error: "."It is required to add all information!". "<br>"."Please & Thank You"."<br>" ;
+ die( "Error: "."It is required to add all information!". "<br>"."Please & Thank You"."<br>" );
+	}else{
+	echo "New signature created successfully"; 
 }
 $conn->close();
 	

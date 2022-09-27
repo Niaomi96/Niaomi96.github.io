@@ -34,8 +34,8 @@ $dbname = "wolves";
 		
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn) {
-  die("Connection failed" );
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
 if(isset($_POST['Delete'])){
 	$SignatureID =$_POST ['SignatureID'];
@@ -45,9 +45,9 @@ if(isset($_POST['Delete'])){
 }
 
 if ($conn === TRUE) {
-  echo "Deleted successfully";
-} else {
-  echo "Error:  Can't Delete Paraticipant. They are connected to another table! "."<br>";
+ echo "Error:  Can't Delete Paraticipant. They are connected to another table! "."<br>"; 
+}else{
+    echo "Deleted successfully";
 }
 
 $conn->close();

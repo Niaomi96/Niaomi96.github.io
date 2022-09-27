@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="nav.css">
 <link rel="stylesheet" href="signature.css">
 <script src="home.js"></script>
+<script src="s.js"></script>
 <script defer src="add.js"></script>
   <h1><img src="vitalis.png" alt="vitalis" style="width:200px"style="height:200px" style="float:left"><span>Wolves Are </span>Just Like Us</h1>
     <h3>Give Them Love & Respect.</h3>
@@ -159,7 +160,7 @@ box-sizing: border-box;
 		<th><?php echo $row['Region'];?></th>
 		
 		
-<form action ="delete.php" method="post">
+<form action ="delete.php" method="POST">
 <input type= "hidden" name ="SignatureID" value="<?php echo $row['SignatureID']; ?>">
 <th>
 <button type="submit" name="Delete"  class = "plus"  Value ="delete"><img src="trash.png" height ="25" width="25"  /></button>
@@ -186,7 +187,7 @@ box-sizing: border-box;
 </div>
 <div class="sign-body">
 
-<form action ="insert.php"  method="post">
+<form name="myForm" action ="insert.php" onsubmit="return validateForm()" method="POST">
 <fieldset>
 <p><label for="Name">Name:</label>
 <input type ="text" id="Name" name="Name" maxlength="25" size="25" /></p>

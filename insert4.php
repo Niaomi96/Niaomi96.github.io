@@ -51,9 +51,9 @@ $sql_run = mysqli_query($conn, $sql);
 }
 
 if ($conn === TRUE) {
-  echo "New donation created successfully";
+ echo "Error: "."Please add a your name to signatures table first!". "<br>"."Please & Thank You"."<br>"."If You already have signed, please make sure to have your identifcation Number"."<br>" ;
 } else {
-  echo "Error: "."Please add a your name to signatures table first!". "<br>"."Please & Thank You"."<br>"."If You already have signed, please make sure to have your identifcation Number"."<br>" ;
+   echo "New donation created successfully";
 }
 
 $conn->close();

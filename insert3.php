@@ -52,9 +52,9 @@ $sql_run = mysqli_query($conn, $sql);
 }
 
 if ($conn === TRUE) {
-  echo "New Plushy Order created successfully";
+   echo "Error: "."You Missed Something!". "<br>"."Please & Thank You"."<br>" ;
 } else {
- echo "Error: "."You Missed Something!". "<br>"."Please & Thank You"."<br>" ;
+echo "New Plushy Order created successfully";
 }
 
 
