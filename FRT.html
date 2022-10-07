@@ -12,10 +12,38 @@
 table, th, td {
   border:1px solid black;
   background-color: #0B978E;
+   color: white;
     max-width: 1500px;
     margin: auto;
     padding: 10px;
 	text-align: center;
+}
+
+#mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+  margin: right;
+}
+
+
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+#myMenu li a {
+  padding: 12px;
+  text-decoration: none;
+  color: white;
+  display: block
+}
+
+#myMenu li a:hover {
+  background-color: #eee;
 }
 </style>
 </head>
@@ -30,7 +58,15 @@ table, th, td {
     
   </nav>
 </div>
+
+<div  class="content">
+
+<label for="mySearch" style="font-size:20px"><b>Find Table:</b></label>
+<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a table name" style="width:200px" >
+</div>
+<ul id="myMenu">
 <table>
+
   <tr>
     <th>Signatures</th>
 	<th>Foundation Representives</th>
@@ -38,10 +74,32 @@ table, th, td {
 	<th>Donations</th>
   </tr>
   <tr>
-    <td><a href='signature.php'>Signatures</a></td> <td><a href='foundation.php'>Foundation Representives</a></td><td><a href='plushy.php'>Plushy Orders</a></td><td><a href='donation.php'>Donations</a></td>
+    <td><li><a href='signature.php'>Signatures</a></li></td> <td><li><a href='foundation.php'>Foundation Representives</a></li></td><td><li><a href='plushy.php'>Plushy Orders</a></li></td><td><li><a href='donation.php'>Donations</a></li></td>
   </tr>
 
 </table>
+</ul>
+
+<script>
+function myFunction() {
+  
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
 <p  class="footer" style="text-align: center">@Copyrights & copy; 2022 Niaomi James</p>
 </body>
 </html>

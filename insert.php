@@ -47,10 +47,10 @@ $sql = "INSERT INTO signatures (Name, Sponsor, Region) VALUES ( '$Name', '$Spons
 $sql_run = mysqli_query($conn, $sql);
 }
 
-if ($conn === TRUE) {
- die( "Error: "."It is required to add all information!". "<br>"."Please & Thank You"."<br>" );
-	}else{
-	echo "New signature created successfully"; 
+if ($conn->query($sql) === TRUE) {
+  echo "New Signature created successfully";
+} else {
+  echo "Error: Please provide the right identification number" . $sql . "<br>" . "<br>" . "<br>" . "<br>" . $conn->error;
 }
 $conn->close();
 	

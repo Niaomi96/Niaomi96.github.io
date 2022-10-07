@@ -49,12 +49,12 @@ if(isset($_POST['insert'])){
 $sql = "INSERT INTO donation (SignatureID, FoundationRepID, PlushyID , Contact, Address, Amount, Date) VALUES ( '$SignatureID','$FoundationRepID', '$PlushyID' , '$Contact','$Address', '$Amount', '$Date')";
 $sql_run = mysqli_query($conn, $sql);
 }
-
-if ($conn === TRUE) {
- echo "Error: "."Please add a your name to signatures table first!". "<br>"."Please & Thank You"."<br>"."If You already have signed, please make sure to have your identifcation Number"."<br>" ;
+if ($conn->query($sql) === TRUE) {
+  echo "New donation created successfully";
 } else {
-   echo "New donation created successfully";
+  echo "Error: Please provide the right identification number" . $sql . "<br>" . "<br>" . "<br>" . "<br>" . "<br>". $conn->error;
 }
+
 
 $conn->close();
 	

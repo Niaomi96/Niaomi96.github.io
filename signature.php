@@ -8,7 +8,13 @@
 <link rel="stylesheet" href="signature.css">
 <script src="home.js"></script>
 <script src="s.js"></script>
+
+<script src="Pagination.js"></script>
 <script defer src="add.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
   <h1><img src="vitalis.png" alt="vitalis" style="width:200px"style="height:200px" style="float:left"><span>Wolves Are </span>Just Like Us</h1>
     <h3>Give Them Love & Respect.</h3>
 	<style type="text/css">
@@ -125,6 +131,38 @@ box-sizing: border-box;
 	
 	<button data-sign-target="#signature" class = "plus"  ><img src="plus.png" height ="25" width="25"  /></button>
 <h3 style= "text-align: center">Signatures </h3>
+<section>
+ <div id="container"></div>
+<div style="text-align:center">
+<div id="pagination" >
+  <div class="pagination">
+    <span class="pagination" onclick="currentSlide(1)"><a href="signature.php">1</a></span> 
+  <div class="numbertext">1</div>
+  
+  </div>
+  <div class="pagination">
+   <span class="pagination" onclick="currentSlide(2)"> <a href="foundation.php">2</a></span> 
+  <div class="numbertext">2</div>
+ 
+  </div>
+  <div class="pagination">
+ <span class="pagination" onclick="currentSlide(3)"><a href="plushy.php#">3</a></span> 
+  <div class="numbertext">3</div>
+  
+  </div>
+  <div class="pagination">
+  <div class="numbertext">4</div>
+   <span class="pagination" onclick="currentSlide(4)"> <a href="donation.php">4</a></span> 
+  </div>
+  
+  
+</div>
+
+<button   class = "plus"  onclick="window.location.href='FRT.html';" ><img src="return.png" height ="25" width="25"  /></button>
+</section>
+
+</div>
+
 <?php 
         echo '<p>Page visited at '.date('H:i, jS F Y').'</p>';
 		
@@ -143,6 +181,8 @@ box-sizing: border-box;
 		<th>Sponsor</th>
 		<th>Region</th>
 		<th>Delete</th>
+		<th>Edit</th>
+		
 		
 		</tr>";
 		
@@ -153,7 +193,7 @@ box-sizing: border-box;
 		
 		
 		?>
-	<tbody>
+	<tbody >
 	    <th><?php echo $row['SignatureID']; ?></th>
 		<th><?php echo $row['Name'];?></th>
 		<th><?php echo $row['Sponsor'];?></th>
@@ -164,6 +204,12 @@ box-sizing: border-box;
 <input type= "hidden" name ="SignatureID" value="<?php echo $row['SignatureID']; ?>">
 <th>
 <button type="submit" name="Delete"  class = "plus"  Value ="delete"><img src="trash.png" height ="25" width="25"  /></button>
+</th>
+</form>
+<form action ="edit.php" method="POST">
+<input type= "hidden" name ="SignatureID" value="<?php echo $row['SignatureID']; ?>">
+<th>
+<button type="submit" name="Edit"  class = "plus"  Value ="edit"><img src="edit.png" height ="25" width="25"  /></button>
 </th>
 </form>
 
@@ -198,12 +244,13 @@ box-sizing: border-box;
 <p><label for="Region">Region:</label>
 <input type ="text" id="Region" name="Region" maxlength="25" size="25" /></p>
 
-<p><input type="submit"  name ="insert" value = "Enter" style="border-radius:5px;"></p>
+<p><button type="submit" name ="insert" class = "plus" value = "Enter" ><img src="sign.png" height ="40" width="70"  /></button></p>
 </fieldset>
 </form>
 </div>
 </div>
 <div "id="overlay"></div>
+
 
 
 <p  class="footer">@Copyrights & copy; 2022 Niaomi James</p>

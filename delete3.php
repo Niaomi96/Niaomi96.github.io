@@ -43,11 +43,10 @@ if(isset($_POST['Delete'])){
  $sql = "DELETE FROM foundationrep WHERE FoundationRepID = '$FoundationRepID'";
  $sql_run = mysqli_query($conn, $sql);
 }
-
-if ($conn === TRUE) {
-  echo "Error:  Can't Delete Paraticipant. They are connected to another table! "."<br>";
-} else {
+if ($conn->query($sql) === TRUE) {
   echo "Deleted successfully";
+} else {
+  echo "Error Can't Delete Paraticipant. They are connected to another table!: " .  "<br>" . "<br>" . "<br>" . "<br>".$conn->error;
 }
 
 $conn->close();

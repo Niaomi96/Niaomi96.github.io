@@ -51,12 +51,11 @@ $sql = "INSERT INTO plushyorder (WolfSpecies, OrderDate, ShippingDate , ArrivalD
 $sql_run = mysqli_query($conn, $sql);
 }
 
-if ($conn === TRUE) {
-   echo "Error: "."You Missed Something!". "<br>"."Please & Thank You"."<br>" ;
+if ($conn->query($sql) === TRUE) {
+  echo "New Plushy Order created successfully";
 } else {
-echo "New Plushy Order created successfully";
+  echo "Error: Please provide the right identification number" . $sql . "<br>" . "<br>" . "<br>" . "<br>" . "<br>". $conn->error;
 }
-
 
 $conn->close();
 	

@@ -44,10 +44,10 @@ if(isset($_POST['Delete'])){
  $sql_run = mysqli_query($conn, $sql);
 }
 
-if ($conn === TRUE) {
- echo "Error:  Can't Delete Paraticipant. They are connected to another table! "."<br>"; 
-}else{
-    echo "Deleted successfully";
+if ($conn->query($sql) === TRUE) {
+  echo "Deleted successfully";
+} else {
+  echo "Error Can't Delete Paraticipant. They are connected to another table!: "   . "<br>" . "<br>" . "<br>" . "<br>".$conn->error;
 }
 
 $conn->close();

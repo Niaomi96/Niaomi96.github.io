@@ -50,11 +50,12 @@ $sql = "INSERT INTO foundationrep (SignatureID, FirstName, LastName , Number, Lo
 $sql_run = mysqli_query($conn, $sql);
 }
 
-if ($conn === TRUE) {
-   echo "Error: "."Please add a your name to signatures table first!". "<br>"."Please & Thank You"."<br>"."<br>"."If You already have signed, please make sure to have your identifcation Number"."<br>" ;
+if ($conn->query($sql) === TRUE) {
+  echo "New Foundation Representatives created successfully";
 } else {
- echo "New Foundation Representatives created successfully";
+  echo "Error: Please provide the right identification number" . $sql . "<br>" .  "<br>" . "<br>" . "<br>" . "<br>". $conn->error;
 }
+
 
 $conn->close();
 	

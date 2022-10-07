@@ -6,38 +6,61 @@
 <link rel="stylesheet" href="home.css">
 <link rel="stylesheet" href="nav.css">
 <script src="home.js"></script>
+
+
   <h1><img src="vitalis.png" alt="vitalis" style="width:200px"style="height:200px" style="float:left"><span>Wolves Are </span>Just Like Us</h1>
     <h3>Give Them Love & Respect.</h3>
+	<style>
+.accordion {
+  background-color: #0B978E;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+.accordion h3{text-align: center;
+color: white;
+}
+
+.active, .accordion:hover {
+  background-color: #ddd; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+</style>
 </head>
 <body>
 
 <div class="sticky-section">
 <div id="logo">What Do You Know About Wolves?</div>
   <nav>
-    <a href='home.html'>Home</a>
+   <a href='home.html'>Home</a>
     <a href="FRT.html">Wolf Donations Management</a>
     <a href="SA.html">Accreditation</a>
     
+    
   </nav>
-</div>
-
-
-
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Genetics')" id="defaultOpen">Genetics</button>
-  <button class="tablinks" onclick="openCity(event, 'Wolfhabitat')">Wolf Habitat</button>
-  <button class="tablinks" onclick="openCity(event, 'WolfDiets')">Wolf Diets</button>
-  <button class="tablinks" onclick="openCity(event, 'WolfNurseryRhymes')">Wolf Nursery Rhymes</button>
-  <button class="tablinks" onclick="openCity(event, 'Wolfspecies')">Wolf Species</button>
-  <button class="tablinks" onclick="openCity(event, 'Wolfhierarchy')">Wolf Hierarchy</button>
-  <button class="tablinks" onclick="openCity(event, 'Wolveshowls')">Wolves Howls</button>
-  <button class="tablinks" onclick="openCity(event, 'Pupsgrowth')">Pups Growth</button>
   
-  <p  class="footer" >@Copyrights & copy; 2022 Niaomi James</p>
 </div>
-<div class ="content">
-<div id="Genetics" class="tabcontent">
-  <h3>Genetics </h3>
+
+
+
+
+
+</div>
+<div class="content">
+<button class="accordion" style="background-color:#6897bb" ><h3><img src="dna.png" alt="vitalis" style="width:70px"style="height:50px" style="float:left">Genetics <img src="dna2.png" alt="vitalis" style="width:70px"style="height:50px" style="float:right"></h3></button>
+<div class="panel">
   <h3>What is K Locus?</h3>
   <p>The K locus, is genetically know to transpire in the dog genome(DNA). 
      Which in returns  transforms  normally gray-coated color into  black-coated color 
@@ -73,8 +96,9 @@ limits the genetic  variation  of DNA  make up  in wolves, thus, this reduces  t
 
 </div>
 
-<div id="Wolfhabitat" class="tabcontent">
-  <h3>Wolf habitat </h3>
+
+  <button class="accordion" style="background-color:#82aa9a"><h3><img src="forest2.png" alt="vitalis" style="width:70px"style="height:50px" style="float:left">Wolf Habitat <img src="forest2.png" alt="vitalis" style="width:70px"style="height:50px" style="float:right"></h3></button>
+  <div class="panel">
   <h3>What habitat wolves inhabit?</h3>
   <p>Wolves thrive  in forested areas, grasslands, steppes, tundra , boreal forests, deserts, and swampy areas.
 </p> 
@@ -84,8 +108,9 @@ limits the genetic  variation  of DNA  make up  in wolves, thus, this reduces  t
  Wolves can travel  up to five miles per hour (8 kilometers) , can reach up to speeds of 40 miles per hour(64 kilometers) an hour.</p>
 </div>
 
-<div id="WolfDiets" class="tabcontent">
-   <h3>Wolf Diets </h3>
+
+  <button class="accordion" style="background-color:#b18d8d" > <h3><img src="elk2.png" alt="vitalis" style="width:70px"style="height:50px" style="float:left">Wolf Diets <img src="elk.png" alt="vitalis" style="width:70px"style="height:50px" style="float:right"></h3></button>
+  <div class="panel">
   <h3>What type of diet wolves have?</h3>
   <p>Typically  depending  on the wolf species, they eat, carrion,  small invertebrates,  fish, avian(birds).
   They also eat array of  wild berries and veggies. Type of prey they hunt, depending  on region  the wolf  calls its place  home, 
@@ -96,8 +121,9 @@ limits the genetic  variation  of DNA  make up  in wolves, thus, this reduces  t
 <p>Yes.</p>
 </div>
 
-<div id="WolfNurseryRhymes" class="tabcontent">
-   <h3>Wolf Nursery Rhymes</h3>
+
+   <button class="accordion" style="background-color:#9fb2c0" ><h3><img src="book.png" alt="vitalis" style="width:70px"style="height:50px" style="float:left">Wolf Nursery Rhymes<img src="book2.png" alt="vitalis" style="width:70px"style="height:50px" style="float:right"></h3></button>
+   <div class="panel">
   <h3>Why are wolves viewed  as bad creatures?</h3>
   <p>Nursery  rhymes are fraction  of the reason  wolves are viewed  as bad animals. The largest  reason is due to fact that, has to do with centuries ago. 
   People was afraid  of  the wolf  howling, as it was strong and  ranged far, it could be heard  miles away  and be felt at your door step. The noise  
@@ -117,8 +143,9 @@ Alaska in April 2000, that was the last attack reported,  unless the individual 
  see them as rival  within there territory. As wolves are highly  territorial. ) 16 case of rabid, when wolves bit but none was fatal, 6 cases where bits was severed. </p>
 
 </div>
-<div id="Wolfspecies" class="tabcontent">
-   <h3>Wolf species</h3>
+
+  <button class="accordion" style="background-color:#fef2b2" ><h3><img src="wolf.png" alt="vitalis" style="width:70px"style="height:50px" style="float:left">Wolf Species<img src="wolf2.png" alt="vitalis" style="width:70px"style="height:50px" style="float:right"></h3></button>
+  <div class="panel">
   <h3>How many wolf species  are there?</h3>
   <p>There are 3 wolf species, canis lupus, canis rufus, and canis  simensis,  there are 38 subspecies which are cross between  dog and  grey wolf.</p>
 
@@ -136,8 +163,9 @@ Alaska in April 2000, that was the last attack reported,  unless the individual 
 </p>
 </div>
 
-<div id="Wolfhierarchy" class="tabcontent">
-   <h3>Wolf hierarchy</h3>
+
+  <button class="accordion" style="background-color:#ddcece"> <h3><img src="growl.png" alt="vitalis" style="width:70px"style="height:20px" style="float:left">Wolf Hierarchy<img src="growl2.png" alt="vitalis" style="width:70px"style="height:20px" style="float:right"></h3></button>
+  <div class="panel">
   <h3> Do wolves have pack dynamic structure  or family oriented?
 </h3>
   <p>Wolves have recently  been announced  as family-oriented pack back in 2018, as they have a breeding pair  known  as alpha ( Male and female). 
@@ -150,8 +178,9 @@ and authority over others,  that's why have aggressive feedings. Which  very muc
 have a  hierarchy,  such  as democracy or matriarch.</p>
 
 </div>
-<div id="Wolveshowls" class="tabcontent">
-   <h3>Wolves howls</h3>
+
+   <button class="accordion" style="background-color:#f3eeee"><h3><img src="howl.png" alt="vitalis" style="width:70px"style="height:50px" style="float:left">Wolves Howls<img src="howl2.png" alt="vitalis" style="width:70px"style="height:50px" style="float:right"></h3></button>
+   <div class="panel">
   <h3>What are different types of  howls?</h3>
   <p>Wolves have 21 different  howl dialects species  world wide.  Main howls of the gray wolf, Territorial howl, mate howl, individual howls.
 </p>
@@ -161,8 +190,9 @@ have a  hierarchy,  such  as democracy or matriarch.</p>
 
 </div>
 
-<div id="Pupsgrowth" class="tabcontent">
-   <h3>Pups growth</h3>
+
+  <button class="accordion" style="background-color:#e3d0e3"> <h3><img src="pup.png" alt="vitalis" style="width:70px"style="height:50px" style="float:left">Pups Growth<img src="pup2.png" alt="vitalis" style="width:70px"style="height:50px" style="float:right"></h3></button>
+  <div class="panel">
   <h3>When  are pups born?</h3>
   <p>May to early June. </p>
   
@@ -187,6 +217,27 @@ have a  hierarchy,  such  as democracy or matriarch.</p>
 
 </div>
 </div>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+  <p  class="footer" >@Copyrights & copy; 2022 Niaomi James</p>
 </body>
 
 </html> 
