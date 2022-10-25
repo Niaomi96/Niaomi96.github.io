@@ -50,7 +50,7 @@ $sql_run = mysqli_query($conn, $sql);
 if ($conn->query($sql) === TRUE) {
   echo "New Signature created successfully";
 } else {
-  echo "Error: Please provide the right identification number" . $sql . "<br>" . "<br>" . "<br>" . "<br>" . $conn->error;
+  echo "Error: Please provide the right identification number" . "<br>" . "<br>" . "<br>" . "<br>" . $conn->error;
 }
 $conn->close();
 	

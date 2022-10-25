@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<!--------Niaomi James/ 9/6/22---------->
+<!--------Niaomi James/ 10/19/22---------->
 <head>
-<meta FoundationRepID="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="home.css">
 <link rel="stylesheet" href="nav.css">
 <link rel="stylesheet" href="signature.css">
 <script src="home.js"></script>
-<script src="d.js"></script>
+<script src="s.js"></script>
 
 <script src="Pagination.js"></script>
 <script defer src="add.js"></script>
@@ -108,7 +108,9 @@ opacity: 1;
 pointer-events: all;
 }
 
-*,*::after,*::before{
+
+
+*::after,*::before{
 box-sizing: border-box;
 }
 </style>
@@ -118,7 +120,7 @@ box-sizing: border-box;
 <div class="sticky-section">
 <div id="logo">What Do You Know About Wolves?</div>
   <nav>
-      <a href='home.html'>Home</a>
+     <a href='home.html'>Home</a>
     <a href="FRT.html">Wolf Donations Management</a>
     <a href="SA.html">Accreditation</a>
     
@@ -127,8 +129,8 @@ box-sizing: border-box;
   
 </div>
 	
-	<button data-sign-target="#signature" class = "plus"  ><img src="plus.png" height ="25" width="25"  /></button>
-<h3 style= "text-align: center">Donation</h3>
+	
+<h3 style= "text-align: center">Previous Orders</h3>
 <section>
  <div id="container"></div>
 <div style="text-align:center">
@@ -152,21 +154,21 @@ box-sizing: border-box;
   <div class="numbertext">4</div>
    <span class="pagination" onclick="currentSlide(4)"> <a href="donation.php">4</a></span> 
   </div>
+  
    </div>
-   
   <div class="pagination">
   <div class="numbertext">5</div>
    <span class="pagination" onclick="currentSlide(4)"> <a href="PO.php">5</a></span> 
   </div>
   
-  
 </div>
-<button   class = "plus"  onclick="window.location.href='FRT.html';" ><img src="return.png" height ="25" width="25"  /></button>
 
+<button   class = "plus"  onclick="window.location.href='FRT.html';" ><img src="return.png" height ="25" width="25"  /></button>
 </section>
 
 </div>
-  <?php 
+
+<?php 
         echo '<p>Page visited at '.date('H:i, jS F Y').'</p>';
 		
 		@$db = new mysqli('localhost', 'root', '', 'wolves');
@@ -176,51 +178,32 @@ box-sizing: border-box;
 			exit;
 		}
 
-		$result = mysqli_query($db,"SELECT * FROM donation; ");
-		
+		$result = mysqli_query($db,"SELECT s.SignatureID, s.Name, d.Contact, d.Address, p.ShippingDate, p.ArrivalDate FROM donation d JOIN signatures s USING (SignatureID) JOIN plushyorder p USING (PlushyID) ORDER BY SignatureID, Name, Contact, Address, ShippingDate, ArrivalDate;");
 		echo "<table border='1' align='center' width='1000' text-align ='center'>
 		<tr>
-		<th>CustomerID</th>
 		<th>SignatureID</th>
-		<th>FoundationRepID</th>
-		<th>PlushyID</th>
+		<th>Name</th>
 		<th>Contact</th>
 		<th>Address</th>
-		<th>Amount</th>
-		<th>Date</th>
-		<th>Delete</th>
-		<th>Edit</th>
+		<th>ShippingDate</th>
+		<th>ArrivalDate </th>
 		</tr>";
-
-	while($row = mysqli_fetch_array($result))
+		
+		while($row = mysqli_fetch_array($result))
 		
 		{
 		echo "<tr>";
 		
 		
 		?>
-	<tbody>
-	    <th><?php echo $row['CustomerID']; ?></th>
-		<th><?php echo $row['SignatureID'];?></th>
-		<th><?php echo $row['FoundationRepID'];?></th>
-		<th><?php echo $row['PlushyID'];?></th>
+	<tbody >
+	    <th><?php echo $row['SignatureID']; ?></th>
+		<th><?php echo $row['Name'];?></th>
 		<th><?php echo $row['Contact'];?></th>
 		<th><?php echo $row['Address'];?></th>
-		<th><?php echo $row['Amount'];?></th>
-		<th><?php echo $row['Date'];?></th>
+		<th><?php echo $row['ShippingDate'];?></th>
+		<th><?php echo $row['ArrivalDate'];?></th>
 		
-<form action ="delete2.php" method="post">
-<input type= "hidden" name ="CustomerID" value="<?php echo $row['CustomerID']; ?>">
-<th>
-<button type="submit" name="Delete"  class = "plus"  Value ="delete"><img src="trash.png" height ="25" width="25"  /></button>
-</th>
-</form>
-<form action ="edit4.php" method="POST">
-<input type= "hidden" name ="CustomerID" value="<?php echo $row['CustomerID']; ?>">
-<th>
-<button type="submit" name="Edit"  class = "plus"  Value ="edit"><img src="edit.png" height ="25" width="25"  /></button>
-</th>
-</form>
 		</tr>
 		</tbody>
 
@@ -231,54 +214,7 @@ box-sizing: border-box;
 		mysqli_close($db);
 
     ?>
-	
-
-
-<div class="signature" id="signature">
-<div class= "sign-header">
-<div class="title">Donation </div>
-<button data-close-button class="close-button">&times;</button>
-</div>
-<div class="sign-body">
-<form name="myForm" action ="insert4.php" onsubmit="return validateForm()"  method="POST">
-<fieldset>
-<p><label for="SignatureID">SignatureID:</label>
-<input type= "text" id="SignatureID" name="SignatureID" maxlength="25" size="25" / >  
- 
-</p>
-
-<p><label for="FoundationRepID">FoundationRepID:</label>
-<input type ="text" id="FoundationRepID" name="FoundationRepID" maxlength="25" size="25" /></p>
-
-<p><label for="PlushyID">PlushyID:</label>
-<input type ="text" id="PlushyID": name="PlushyID" maxlength="23" size="23" /></p>
-
-
-<p><label for="Contact">Contact:</label>
-<input type ="text" id="Contact" name="Contact" maxlength="25" size="25" / >   
-
-</p>
-
-<p><label for="Address">Address:</label>
- <input type ="text" id="Address" name="Address" maxlength="25" size="25" / >      
-</p>
-
-<p><label for="Amount">$Amount:</label>
-<input type ="text" id="Amount" name="Amount" maxlength="25" size="25" /></p>
-
-<p><label for="Date">Date:</label>
-<input type="date" id="Date" name="Date"  style="height:25px" maxlength="25" size="25" /></p>
-
-<p><button type="submit" name ="insert" class = "plus" value = "Enter" ><img src="enter.png" height ="40" width="70"  /></button></p>
-</fieldset>
-</form>
-</div>
-</div>
-<div "id="overlay"></div>
-
-<p  class="footer">@Copyrights & copy; 2022 Niaomi James</p>
-
-
+	<p  class="footer">@Copyrights & copy; 2022 Niaomi James</p>
 
 
 </body>

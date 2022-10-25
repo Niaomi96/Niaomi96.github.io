@@ -186,7 +186,7 @@ $sql_run = mysqli_query($conn, $sql);
 if ($conn->query($sql) === TRUE) {
   echo "Successfully update";
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "Error: Can't be updated " . "<br>" . $conn->error;
 }
 }
 }

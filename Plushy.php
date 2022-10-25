@@ -154,6 +154,12 @@ box-sizing: border-box;
    <span class="pagination" onclick="currentSlide(4)"> <a href="donation.php">4</a></span> 
   </div>
   
+   </div>
+  <div class="pagination">
+  <div class="numbertext">5</div>
+   <span class="pagination" onclick="currentSlide(4)"> <a href="PO.php">5</a></span> 
+  </div>
+  
   
 </div>
 
